@@ -20,9 +20,10 @@ RUN apk --update add wget \
   autoconf \
   cyrus-sasl-dev \
   libgsasl-dev \
-  supervisor
+  supervisor \
+  libpng-dev
 
-RUN docker-php-ext-install mysqli mbstring pdo pdo_mysql tokenizer xml pcntl
+RUN docker-php-ext-install mysqli mbstring pdo pdo_mysql tokenizer xml pcntl zip gd
 RUN pecl channel-update pecl.php.net && pecl install memcached mcrypt-1.0.1 && docker-php-ext-enable memcached
 
 #Install SOAP package:
