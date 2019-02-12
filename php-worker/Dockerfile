@@ -21,10 +21,17 @@ RUN apk --update add wget \
   cyrus-sasl-dev \
   libgsasl-dev \
   supervisor \
-  libpng-dev
+  libpng-dev \
+  autoconf \
+  g++ \
+  imagemagick-dev \
+  libtool \
+  make \
+  pcre-dev
 
 RUN docker-php-ext-install mysqli mbstring pdo pdo_mysql tokenizer xml pcntl zip gd
 RUN pecl channel-update pecl.php.net && pecl install memcached mcrypt-1.0.1 && docker-php-ext-enable memcached
+RUN pecl install imagick && docker-php-ext-enable imagick && apk del autoconf g++ libtool make pcre-dev
 
 #Install SOAP package:
 ARG INSTALL_SOAP=false
