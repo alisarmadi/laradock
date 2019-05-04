@@ -1,12 +1,7 @@
 {
 	"authHost": "http://nginx",
 	"authEndpoint": "/broadcasting/auth",
-	"clients": [
-		{
-			"appId": "TinextSocketIO",
-			"key": "XQI4O2moUegwvzwuFk9Is+gJdqYa"
-		}
-	],
+	"clients": [],
 	"database": "redis",
 	"databaseConfig": {
 		"redis": {
