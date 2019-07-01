@@ -17,6 +17,8 @@ RUN npm install
 
 # Bundle app source
 COPY laravel-echo-server.json /usr/src/app/laravel-echo-server.json
+COPY  ssl/default.crt /etc/ssl/default.crt
+COPY  ssl/default.key /etc/ssl/default.key
 
 EXPOSE 3000
 CMD [ "npm", "start", "--force" ]
