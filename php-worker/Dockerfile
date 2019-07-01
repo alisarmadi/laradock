@@ -97,6 +97,14 @@ RUN if [ $INSTALL_GHOSTSCRIPT = true ]; then \
     apk --update add ghostscript \
 ;fi
 
+#Install MONGO package:
+ARG INSTALL_MONGO=false
+RUN if [ ${INSTALL_MONGO} = true ]; then \
+    apk --update add --no-cache $PHPIZE_DEPS && \
+    pecl install mongodb && \
+    docker-php-ext-enable mongodb \
+;fi
+
 RUN rm /var/cache/apk/* \
     && mkdir -p /var/www
 
