@@ -13,7 +13,7 @@
         "devMode": true,
         "host": null,
         "port": "6001",
-        "protocol": "https",
+        "protocol": "http",
         "socketio": {},
         "sslCertPath": "/etc/ssl/default.crt",
         "sslKeyPath": "/etc/ssl/default.key",
